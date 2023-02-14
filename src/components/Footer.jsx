@@ -4,7 +4,9 @@ export default class Footer extends React.Component{
 
   render(){
     return(
-      <p>footer boogers</p>
+      <div className='footer-container'>
+        <h4 className='footer-creator'>Creator: Jacob Bassett</h4>
+      </div>
     )
   }
 }

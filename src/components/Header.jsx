@@ -5,7 +5,10 @@ export default class Header extends React.Component{
 
   render () {
     return (
-      <p>header boogers</p>
+      <div className='header-container'>
+        <h1 className="header-title">Horned Beasts</h1>
+      </div>
+      
     )
   }
 };
