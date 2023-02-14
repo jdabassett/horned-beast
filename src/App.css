@@ -5,8 +5,15 @@
 
 .main-container
 .beast-container
+.beast-title
+.beast-image
+.beast-description
 
 
 .footer-container
 .footer-creator
 */
+
+.footer-creator {
+  color:red;
+}
