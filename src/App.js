@@ -1,16 +1,23 @@
 
 import './App.css';
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import Header from './components/Header.jsx';
+import Main from './components/Main.jsx';
+import Footer from './components/Footer.jsx';
+
 
 class App extends React.Component {
+  // constructor(props){
+  //   super(props);
+  // };
 
   render () {
+    console.log('app working')
     return (
       <div className="app-container">
-        <header className="header-container">
-          <p>boogers</p>
-        </header>
+        <Header />
+        <Main />
+        <Footer />
       </div>
     );
   }
