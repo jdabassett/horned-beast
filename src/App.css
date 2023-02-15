@@ -5,9 +5,13 @@
 
 .main-container
 .beast-container
+.beast-body
 .beast-title
 .beast-heart
+.beast-favorites
 .beast-image
+.favorite
+.beast-button
 .beast-description
 
 
@@ -15,8 +19,48 @@
 .footer-creator
 */
 
+body {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
 
+.header-title {
+  text-align:center;
+}
+.beast-container {
+  margin-top:2em;
+}
+
+.beast-body {
+  display:flex;
+  flex-direction:column;
+  justify-items:space-evenly;
+  align-items:center;
+}
+.beast-heart {
+  display:inline;
+}
+.beast-favorites {
+  display:inline;
+  margin-left:0.5em;
+}
+.beast-image {
+  width:200px;
+  height:200px;
+  object-fit:cover;
+}
+.favorite {
+  outline:3px solid black;
+}
+.beast-button {
+  margin-left:0.5em;
+}
+.beast-description {
+  text-align:center;
+}
 
 .footer-creator {
-  color:red;
+  margin-top:2em;
+  text-align:center;
 }
