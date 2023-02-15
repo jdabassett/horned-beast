@@ -28,8 +28,10 @@ body {
 .header-title {
   text-align:center;
 }
+
 .beast-container {
   margin-top:2em;
+  max-width:200px;
 }
 
 .beast-body {

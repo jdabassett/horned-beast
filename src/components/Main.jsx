@@ -1,6 +1,6 @@
 import React from "react";
 import HornedBeast from "./HornedBeast.jsx";
-import data from '../data.json';
+import data from "../data.json";
 
 export default class Main extends React.Component {
   // constructor(props) {
@@ -9,7 +9,7 @@ export default class Main extends React.Component {
 
   render() {
     return (
-      <div className="main-container">
+      <div className="main-container justify-content-md-center row g-3">
         {data.map((item) => (
           <HornedBeast
             key={item._id}
