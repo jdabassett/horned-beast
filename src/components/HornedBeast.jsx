@@ -27,10 +27,10 @@ export default class HornedBeast extends React.Component {
     return (
       <Card 
         style={{ width: '18rem' }} 
-        className="beast-container">
+        className={`beast-container col-12 col-lg-3 col-lg-4 col-md-10 col-sm-10 offset-1 ${this.state.favorites > 0 ? "favorite":""}`}>
 
         <Card.Img variant="top"
-          className={this.state.favorites > 0 ? "beast-image favorite":"beast-image"}
+          className="beast-image"
           src={this.props.imageUrl}
           alt={this.props.description}
           title={this.props.title}
