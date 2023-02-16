@@ -40,7 +40,8 @@ export default class HornedBeast extends React.Component {
 
         <Card.Body className="beast-body">
           <Card.Title className="beast-title">{this.props.title}</Card.Title>
-          <div>
+
+          {this.props.type==="filteredBeast"?null:<div>
             <FontAwesomeIcon
               icon={this.state.favorites > 0 ? fasHeart : farHeart}
               className="beast-heart"
@@ -54,8 +55,9 @@ export default class HornedBeast extends React.Component {
             >
               You Like?
             </Button>
-          </div>
-          {this.props.modalId === this.props.id ? (
+          </div>}
+
+          {this.props.modalDisplayed? (
             <Card.Text className="beast-description">
               {this.props.description}
             </Card.Text>
