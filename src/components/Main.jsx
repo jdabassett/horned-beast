@@ -8,7 +8,8 @@ export default class Main extends React.Component {
     super(props);
     this.state = {
       modalDisplayed: false,
-      filteredBeast: {}
+      filteredBeast: {},
+      searchText: "",
     };
   }
   handlerModalToggle = (beast) => {
@@ -20,28 +21,65 @@ export default class Main extends React.Component {
     }));
   };
 
+  handlerUpdateSearchText = (event) => {
+    let additionalText = event.nativeEvent.data;
+    if (!additionalText){
+      this.handlerResetSearchText();
+      return;
+    }
+    this.setState((prevState) => ({
+      ...prevState,
+      searchText: `${prevState.searchText}${additionalText}`,
+    }));
+  };
+
+  handlerResetSearchText = () => {
+    this.setState({searchText:""})
+  }
 
   render() {
-    console.log(this.state.filteredBeast);
+    let searchedData;
+    if (this.state.searchText) {
+      searchedData = data.filter((item) =>
+        item.keyword.includes(this.state.searchText)
+      );
+      console.log(searchedData);
+    } else {
+      searchedData = data;
+    }
+
     return (
       <div className="main-container justify-content-md-center row g-3">
-        {data.map((item) => (
+        <form className="main-form">
+          <input
+            type="text"
+            placeholder="Search Horned Beasts"
+            onChange={this.handlerUpdateSearchText}
+            value={this.state.searchText}
+          ></input>
+          <button 
+            onClick={this.handlerResetSearchText}>Clear Search Bar</button>
+        </form>
+
+        {searchedData.map((item) => (
           <HornedBeast
-            type='unfilteredBeasts'
+            type="unfilteredBeasts"
             key={item._id}
             id={item._id}
             title={item.title}
             description={item.description}
             imageUrl={item.image_url}
             modalDisplayed={false}
-            handlerModalToggle={()=>this.handlerModalToggle(item)}
+            handlerModalToggle={() => this.handlerModalToggle(item)}
           />
         ))}
         <SelectedBeast
           filteredBeast={this.state.filteredBeast}
           modalDisplayed={this.state.modalDisplayed}
-          handlerModalToggle={()=>this.handlerModalToggle(null)}
+          handlerModalToggle={() => this.handlerModalToggle(null)}
         ></SelectedBeast>
+
+
       </div>
     );
   }

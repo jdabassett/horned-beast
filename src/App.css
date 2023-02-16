@@ -33,6 +33,14 @@ body {
   text-align:center;
 }
 
+.main-form {
+  /* outline:2px solid red; */
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:center;
+}
+
 .beast-container {
   margin-top:2em;
   max-width:200px;
