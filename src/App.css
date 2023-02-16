@@ -62,6 +62,16 @@ body {
   text-align:center;
 }
 
+.modal-container {
+  outline:2px solid red;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  background-color:#FFF;
+  z-index:1000;
+}
+
 .footer-creator {
   margin-top:2em;
   text-align:center;
