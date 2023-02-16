@@ -1,16 +1,25 @@
 import React from "react";
-import ReactDOM from 'react-dom';
 import HornedBeast from "./HornedBeast.jsx";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 export default class SelectedBeast extends React.Component {
+
+
   render() {
     if (this.props.modalDisplayed === false) {
       return null;
     }
-    return ReactDOM.createPortal(
+    return (
       <>
-        <div className="modal-overlay"></div>
-        <div className="modal-container">
+
+        <Modal
+          show={this.props.modalDisplayed}
+          // onHide={}
+          backdrop="static"
+          keyboard={false}
+        >
+        <Modal.Body className="modal-body">
           <HornedBeast
             type="filteredBeast"
             key={this.props.filteredBeast._id}
@@ -21,9 +30,12 @@ export default class SelectedBeast extends React.Component {
             modalDisplayed={this.props.modalDisplayed}
             handlerModalToggle={this.props.handlerModalToggle}
           />
-        </div>
-      </>,
-      document.getElementById('portal')
+          <Button className="modal-button" variant="primary" onClick={this.props.handlerModalToggle}>Click to Exit
+          </Button>
+          </Modal.Body>
+
+        </Modal>
+      </>
     )
   }
 }

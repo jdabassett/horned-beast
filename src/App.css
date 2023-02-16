@@ -65,7 +65,7 @@ body {
 .beast-description {
   text-align:center;
 }
-.modal-overlay {
+/* .modal-overlay {
   position:fixed;
   top:0px;
   left:0;
@@ -75,7 +75,7 @@ body {
   z-index:999;
 }
 .modal-container {
-  /* outline:2px solid red; */
+  outline:2px solid red;
   position:fixed;
   width:300px;
   height:500px;
@@ -89,6 +89,15 @@ body {
   flex-direction:row;
   justify-content:center;
   align-items:center;
+} */
+
+.modal-body {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.modal-button {
+  margin:1em;
 }
 
 .footer-creator {
