@@ -9,18 +9,15 @@ export default class FormElement extends React.Component {
           <Form.Label>
             Narrow the beasts displayed but how many horns they have:
           </Form.Label>
-          <Form.Select onChange={(e)=>this.props.setFilteredHorns(e)}>
+          <Form.Select onChange={(e) => this.props.setFilteredHorns(e)}>
+            <option placeholder="true" value={this.props.uniqueHorns}>
+              all
+            </option>
 
-            <option 
-              placeholder="true" 
-              value={this.props.uniqueHorns}
-              >all</option>
-              
             {this.props.uniqueHorns.map((item, index) => (
-              <option 
-                key={index} 
-                value={[item]}
-                >{item}</option>
+              <option key={index} value={[item]}>
+                {item}
+              </option>
             ))}
           </Form.Select>
         </Form.Group>
