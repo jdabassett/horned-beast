@@ -61,7 +61,8 @@ export default class HornedBeast extends React.Component {
             <Card.Text className="beast-description">
               {this.props.description}
             </Card.Text>
-          ) : null}
+            ) : null}
+            
         </Card.Body>
       </Card>
     );
